@@ -1,0 +1,34 @@
+SOC Lab Build - Conversation Log
+Date: 26 July 2026
+====================================
+
+PHASE 1: SYSTEM CLEANUP
+- User deleted Docker Desktop and old soc-lab folders manually
+- Remaining items found: D:\soc-lab, C:\Users\Rudraksh Dixit\soc-homelab, Docker AppData remnants, WSL Ubuntu distro
+- All remnants deleted and WSL unregistered
+
+PHASE 2: DOCKER SETUP
+- Docker Desktop 4.83.0 installed via winget
+- Added to user PATH
+- WSL docker-desktop distro exported to D:\soc-lab\docker-data\ and re-imported
+- Later had to do factory reset due to engine issues
+- Final state: Docker running clean on WSL2 backend
+
+PHASE 3: WAZUH DEPLOYMENT
+- Cloned wazuh-docker repo to D:\soc-lab\wazuh-docker\
+- Initial main branch used 5.1.0 images (not found on Docker Hub)
+- Switched to stable tag v4.14.6
+- Generated SSL certificates via generate-indexer-certs.yml
+- All 3 containers deployed and running:
+  - single-node-wazuh.manager-1
+  - single-node-wazuh.indexer-1
+  - single-node-wazuh.dashboard-1
+
+PHASE 4: ACCESS
+- Dashboard: https://localhost
+- Username: admin
+- Password: SecretPassword
+
+PENDING:
+- Suricata integration
+- Management scripts (start.ps1, stop.ps1, status.ps1)
