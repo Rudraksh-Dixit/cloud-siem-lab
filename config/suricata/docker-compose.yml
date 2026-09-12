@@ -6,42 +6,39 @@ services:
     container_name: suricata-victim
     command: python /app/victim.py
     volumes:
-      - ../config/suricata/scripts:/app:ro
+      - ./scripts:/app:ro
     networks:
       - intranet
-    healthcheck:
-      test: ["CMD", "python", "-c", "import socket; s=socket.socket(); s.settimeout(1); s.connect(('127.0.0.1',80))"]
-      interval: 2s
-      timeout: 2s
-      retries: 30
 
   attacker:
     image: python:3-alpine
     container_name: suricata-attacker
     command: python /app/attacker.py
     volumes:
-      - ../config/suricata/scripts:/app:ro
+      - ./scripts:/app:ro
     networks:
       - intranet
     depends_on:
-      victim:
-        condition: service_healthy
+      - victim
+      - suricata
 
   suricata:
     image: jasonish/suricata:7.0
     container_name: suricata-sniffer
-    network_mode: service:victim
-    depends_on:
-      - victim
+    cap_add:
+      - NET_ADMIN
+      - SYS_NICE
+    networks:
+      - intranet
     command:
       - -i
       - eth0
       - -S
       - /etc/suricata/rules/local.rules
     volumes:
-      - ../config/suricata/suricata.yaml:/etc/suricata/suricata.yaml:ro
-      - ../config/suricata/rules/local.rules:/etc/suricata/rules/local.rules:ro
-      - ../data/suricata/logs:/var/log/suricata
+      - ./suricata.yaml:/etc/suricata/suricata.yaml:ro
+      - ./rules/local.rules:/etc/suricata/rules/local.rules:ro
+      - ../../data/suricata/logs:/var/log/suricata
     restart: on-failure
 
   filebeat:
@@ -49,8 +46,8 @@ services:
     container_name: suricata-filebeat
     user: root
     volumes:
-      - ../config/filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
-      - ../data/suricata/logs:/var/log/suricata:ro
+      - ../filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
+      - ../../data/suricata/logs:/var/log/suricata:ro
     depends_on:
       - suricata
     networks:

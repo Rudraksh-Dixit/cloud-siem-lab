@@ -1,17 +1,13 @@
-<group name="active_response,">
+<group name="active_response,siem-lab,">
 
-  <!-- ============================================================ -->
-  <!-- Active Response: Auto-block IP on brute force                -->
-  <!-- ============================================================ -->
-
-  <rule id="100100" level="12">
-    <if_sid>100010,100011</if_sid>
+  <rule id="100400" level="12">
+    <if_matched_sid>100310</if_matched_sid>
     <description>SSH brute force: triggering auto-block active response</description>
     <group>active_response,brute_force</group>
   </rule>
 
-  <rule id="100101" level="12">
-    <if_sid>100020</if_sid>
+  <rule id="100401" level="12">
+    <if_matched_sid>100320</if_matched_sid>
     <description>Port scan detected: triggering auto-block active response</description>
     <group>active_response,port_scan</group>
   </rule>
