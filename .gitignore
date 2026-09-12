@@ -3,3 +3,6 @@ wazuh-docker/
 .env.local
 .DS_Store
 Thumbs.db
+docker-data/
+data/suricata/logs/
+*.tar

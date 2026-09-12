@@ -1,0 +1,20 @@
+filebeat.modules:
+  - module: suricata
+    log:
+      enabled: true
+      var.paths: ["/var/log/suricata/eve.json"]
+
+output.opensearch:
+  hosts: ["https://wazuh.indexer:9200"]
+  username: "admin"
+  password: "SecretPassword"
+  ssl.verification_mode: none
+  indices:
+    - index: "suricata-%{+yyyy.MM.dd}"
+
+logging.level: info
+logging.to_files: true
+logging.files:
+  path: /var/log/filebeat
+  name: filebeat
+  keepfiles: 7

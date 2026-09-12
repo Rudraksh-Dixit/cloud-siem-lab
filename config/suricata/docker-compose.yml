@@ -1,4 +1,4 @@
-name: soc-lab-suricata
+name: cloud-siem-suricata
 
 services:
   victim:
@@ -6,7 +6,7 @@ services:
     container_name: suricata-victim
     command: python /app/victim.py
     volumes:
-      - D:/soc-lab/config/suricata/scripts:/app:ro
+      - ../config/suricata/scripts:/app:ro
     networks:
       - intranet
     healthcheck:
@@ -20,7 +20,7 @@ services:
     container_name: suricata-attacker
     command: python /app/attacker.py
     volumes:
-      - D:/soc-lab/config/suricata/scripts:/app:ro
+      - ../config/suricata/scripts:/app:ro
     networks:
       - intranet
     depends_on:
@@ -39,9 +39,22 @@ services:
       - -S
       - /etc/suricata/rules/local.rules
     volumes:
-      - D:/soc-lab/config/suricata/suricata.yaml:/etc/suricata/suricata.yaml:ro
-      - D:/soc-lab/config/suricata/rules/local.rules:/etc/suricata/rules/local.rules:ro
-      - D:/soc-lab/data/suricata/logs:/var/log/suricata
+      - ../config/suricata/suricata.yaml:/etc/suricata/suricata.yaml:ro
+      - ../config/suricata/rules/local.rules:/etc/suricata/rules/local.rules:ro
+      - ../data/suricata/logs:/var/log/suricata
+    restart: on-failure
+
+  filebeat:
+    image: elastic/filebeat:8.12.0
+    container_name: suricata-filebeat
+    user: root
+    volumes:
+      - ../config/filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
+      - ../data/suricata/logs:/var/log/suricata:ro
+    depends_on:
+      - suricata
+    networks:
+      - intranet
     restart: on-failure
 
 networks:

@@ -1,0 +1,154 @@
+<group name="local,custom,">
+
+  <!-- ============================================================ -->
+  <!-- PowerShell Obfuscation Detection                             -->
+  <!-- ============================================================ -->
+
+  <rule id="100001" level="12">
+    <if_group>windows</if_group>
+    <field name="win.eventdata.scriptBlockText" type="pcre2">(?i)(\bInvoke-Expression\b|\bIEX\b|\bInvoke-WebRequest\b).*(\[-join\]|-replace|char\s*\[|\[char\]|FromBase64String|Net\.WebClient|DownloadString)</field>
+    <description>PowerShell obfuscation detected: encoded/IEX command pattern</description>
+    <mitre>
+      <id>T1059.001</id>
+      <id>T1027</id>
+    </mitre>
+    <group>obfuscation,powershell,attack.defense_evasion,attack.execution</group>
+  </rule>
+
+  <rule id="100002" level="14">
+    <if_group>windows</if_group>
+    <field name="win.eventdata.scriptBlockText" type="pcre2">(?i)(FromBase64String|-[eE]nc[dD]|[Dd]ecompres)|(Gzip|Deflate).*Stream</field>
+    <description>PowerShell: Base64 + compression deobfuscation detected</description>
+    <mitre>
+      <id>T1059.001</id>
+      <id>T1140</id>
+    </mitre>
+    <group>obfuscation,powershell,attack.defense_evasion,attack.execution</group>
+  </rule>
+
+  <rule id="100003" level="10">
+    <if_group>windows</if_group>
+    <field name="win.eventdata.scriptBlockText" type="pcre2">(?i)(\bSet-ExecutionPolicy\b.*Bypass|\b-ExecutionPolicy\b.*Bypass|\b-NoProfile\b.*\b-Command\b)</field>
+    <description>PowerShell execution policy bypass detected</description>
+    <mitre>
+      <id>T1059.001</id>
+    </mitre>
+    <group>powershell,attack.execution</group>
+  </rule>
+
+  <!-- ============================================================ -->
+  <!-- SSH Brute Force Detection                                    -->
+  <!-- ============================================================ -->
+
+  <rule id="100010" level="10" frequency="8" timeframe="120" ignore="60">
+    <if_matched_sid>5710</if_matched_sid>
+    <same_source_ip />
+    <description>SSH brute force attack detected (8+ failures in 2 minutes)</description>
+    <mitre>
+      <id>T1110.001</id>
+    </mitre>
+    <group>authentication_failures,brute_force,ssh,attack.credential_access</group>
+  </rule>
+
+  <rule id="100011" level="12" frequency="15" timeframe="300" ignore="60">
+    <if_matched_sid>5710</if_matched_sid>
+    <same_source_ip />
+    <description>SSH brute force attack: sustained attack (15+ failures in 5 minutes)</description>
+    <mitre>
+      <id>T1110.001</id>
+    </mitre>
+    <group>authentication_failures,brute_force,ssh,attack.credential_access</group>
+  </rule>
+
+  <rule id="100012" level="8">
+    <if_group>sshd</if_group>
+    <match>Invalid user</match>
+    <description>SSH login attempt with invalid username</description>
+    <mitre>
+      <id>T1110.001</id>
+    </mitre>
+    <group>authentication_failures,ssh,attack.credential_access</group>
+  </rule>
+
+  <!-- ============================================================ -->
+  <!-- Port Scan Detection                                          -->
+  <!-- ============================================================ -->
+
+  <rule id="100020" level="12" frequency="12" timeframe="60" ignore="30">
+    <if_matched_sid>1002</if_matched_sid>
+    <same_source_ip />
+    <different_field>dstport</different_field>
+    <description>Port scan detected: 12+ different ports from same source in 60s</description>
+    <mitre>
+      <id>T1046</id>
+    </mitre>
+    <group>port_scan,recon,attack.discovery</group>
+  </rule>
+
+  <rule id="100021" level="10" frequency="6" timeframe="120" ignore="60">
+    <if_matched_sid>5710</if_matched_sid>
+    <same_source_ip />
+    <different_field>dstuser</different_field>
+    <description>Authentication scan: multiple users targeted from same source</description>
+    <mitre>
+      <id>T1110.003</id>
+    </mitre>
+    <group>brute_force,recon,attack.credential_access</group>
+  </rule>
+
+  <!-- ============================================================ -->
+  <!-- Suspicious Process Execution                                 -->
+  <!-- ============================================================ -->
+
+  <rule id="100030" level="12">
+    <if_group>windows</if_group>
+    <field name="win.eventdata.image" type="pcre2">(?i)\\(cmd|powershell|wscript|cscript|mshta)\.exe</field>
+    <field name="win.eventdata.parentImage" type="pcre2">(?i)\\(winword|excel|powerpnt|outlook|acrord32)\.exe</field>
+    <description>Suspicious: Office/Adobe spawned command-line process</description>
+    <mitre>
+      <id>T1059</id>
+      <id>T1566.001</id>
+      <id>T1204.002</id>
+    </mitre>
+    <group>macro_execution,suspicious_process,attack.execution,attack.initial_access</group>
+  </rule>
+
+  <rule id="100031" level="14">
+    <if_group>windows</if_group>
+    <field name="win.eventdata.image" type="pcre2">(?i)\\(cmd|powershell)\.exe</field>
+    <field name="win.eventdata.parentImage" type="pcre2">(?i)\\lsass\.exe</field>
+    <description>Critical: lsass.exe spawned command process — likely injection</description>
+    <mitre>
+      <id>T1055</id>
+      <id>T1003.001</id>
+    </mitre>
+    <group>process_injection,credential_dumping,attack.credential_access,attack.defense_evasion</group>
+  </rule>
+
+  <!-- ============================================================ -->
+  <!-- Lateral Movement Detection                                   -->
+  <!-- ============================================================ -->
+
+  <rule id="100040" level="12">
+    <if_group>windows</if_group>
+    <field name="win.eventdata.targetObject" type="pcre2">(?i)(\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run|\\\\CurrentVersion\\\\RunOnce)</field>
+    <description>Registry Run key modification — persistence mechanism</description>
+    <mitre>
+      <id>T1547.001</id>
+    </mitre>
+    <group>persistence,registry,attack.persistence</group>
+  </rule>
+
+  <rule id="100041" level="10">
+    <if_group>windows</if_group>
+    <field name="win.eventdata.image" type="pcre2">(?i)\\(psexec|wmic|winrs)\.exe</field>
+    <description>Remote administration tool executed — potential lateral movement</description>
+    <mitre>
+      <id>T1021.002</id>
+      <id>T1047</id>
+      <id>T1569.002</id>
+    </mitre>
+    <group>lateral_movement,attack.lateral_movement</group>
+  </rule>
+
+</group>
