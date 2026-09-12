@@ -1,0 +1,147 @@
+08/11/2026-17:06:37.163820  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:53262 -> 172.19.0.2:3389
+08/11/2026-17:06:37.277046  [**] [1:9000001:1] SOC-LAB Port scan - many SYN packets [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:37768 -> 172.19.0.2:80
+08/11/2026-17:06:37.280211  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:53278 -> 172.19.0.2:3389
+08/11/2026-17:06:37.395661  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:53292 -> 172.19.0.2:3389
+08/11/2026-17:06:37.510845  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:53304 -> 172.19.0.2:3389
+08/11/2026-17:06:37.633886  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:53306 -> 172.19.0.2:3389
+08/11/2026-17:06:37.748186  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:53322 -> 172.19.0.2:3389
+08/11/2026-17:06:37.860578  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:53334 -> 172.19.0.2:3389
+08/11/2026-17:06:37.970771  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:53342 -> 172.19.0.2:3389
+08/11/2026-17:08:27.523574  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:34322 -> 172.19.0.2:3389
+08/11/2026-17:08:27.634564  [**] [1:9000001:1] SOC-LAB Port scan - many SYN packets [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:53900 -> 172.19.0.2:80
+08/11/2026-17:08:27.636184  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:34336 -> 172.19.0.2:3389
+08/11/2026-17:08:27.748127  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:34344 -> 172.19.0.2:3389
+08/11/2026-17:08:27.859297  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:34350 -> 172.19.0.2:3389
+08/11/2026-17:08:27.969469  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:34362 -> 172.19.0.2:3389
+08/11/2026-17:08:28.079708  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:34374 -> 172.19.0.2:3389
+08/11/2026-17:08:28.189086  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:34390 -> 172.19.0.2:3389
+08/11/2026-17:08:28.300017  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:34400 -> 172.19.0.2:3389
+08/11/2026-17:25:35.174376  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:46296 -> 172.19.0.2:3389
+08/11/2026-17:25:35.290004  [**] [1:9000001:1] SOC-LAB Port scan - many SYN packets [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:55094 -> 172.19.0.2:80
+08/11/2026-17:25:35.292769  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:46298 -> 172.19.0.2:3389
+08/11/2026-17:25:35.410117  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:46306 -> 172.19.0.2:3389
+08/11/2026-17:25:35.526833  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:46312 -> 172.19.0.2:3389
+08/11/2026-17:25:35.645050  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:46326 -> 172.19.0.2:3389
+08/11/2026-17:25:35.762365  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:46330 -> 172.19.0.2:3389
+08/11/2026-17:25:35.880306  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:46340 -> 172.19.0.2:3389
+08/11/2026-17:25:35.998129  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:46342 -> 172.19.0.2:3389
+08/11/2026-17:26:09.407618  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:55712 -> 172.19.0.2:3389
+08/11/2026-17:26:09.528196  [**] [1:9000001:1] SOC-LAB Port scan - many SYN packets [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:35592 -> 172.19.0.2:80
+08/11/2026-17:26:09.530651  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:55726 -> 172.19.0.2:3389
+08/11/2026-17:26:09.648168  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:55728 -> 172.19.0.2:3389
+08/11/2026-17:26:09.778518  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:55744 -> 172.19.0.2:3389
+08/11/2026-17:26:09.901077  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:55760 -> 172.19.0.2:3389
+08/11/2026-17:26:10.016458  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:55776 -> 172.19.0.2:3389
+08/11/2026-17:26:10.131407  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:55786 -> 172.19.0.2:3389
+08/11/2026-17:26:10.244410  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:55792 -> 172.19.0.2:3389
+08/11/2026-17:54:20.304086  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:50452 -> 172.19.0.3:3389
+08/11/2026-17:54:20.416988  [**] [1:9000001:1] SOC-LAB Port scan - many SYN packets [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:39608 -> 172.19.0.3:80
+08/11/2026-17:54:20.418637  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:50458 -> 172.19.0.3:3389
+08/11/2026-17:54:20.529117  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:50470 -> 172.19.0.3:3389
+08/11/2026-17:54:20.640105  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:50474 -> 172.19.0.3:3389
+08/11/2026-17:54:20.751058  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:50484 -> 172.19.0.3:3389
+08/11/2026-17:54:20.860938  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:50498 -> 172.19.0.3:3389
+08/11/2026-17:54:20.970855  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:50512 -> 172.19.0.3:3389
+08/11/2026-17:54:21.080623  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:50522 -> 172.19.0.3:3389
+08/11/2026-17:58:50.074033  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:53610 -> 172.19.0.3:3389
+08/11/2026-17:58:50.183974  [**] [1:9000001:1] SOC-LAB Port scan - many SYN packets [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:34328 -> 172.19.0.3:80
+08/11/2026-17:58:50.186090  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:53616 -> 172.19.0.3:3389
+08/11/2026-17:58:50.298073  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:53620 -> 172.19.0.3:3389
+08/11/2026-17:58:50.410432  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:53628 -> 172.19.0.3:3389
+08/11/2026-17:58:50.523746  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:53642 -> 172.19.0.3:3389
+08/11/2026-17:58:50.636857  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:53646 -> 172.19.0.3:3389
+08/11/2026-17:58:50.749564  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:53652 -> 172.19.0.3:3389
+08/11/2026-17:58:50.863772  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:53664 -> 172.19.0.3:3389
+08/11/2026-17:59:54.097294  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:57410 -> 172.19.0.3:3389
+08/11/2026-17:59:54.211912  [**] [1:9000001:1] SOC-LAB Port scan - many SYN packets [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:35614 -> 172.19.0.3:80
+08/11/2026-17:59:54.213404  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:57414 -> 172.19.0.3:3389
+08/11/2026-17:59:54.324931  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:57416 -> 172.19.0.3:3389
+08/11/2026-17:59:54.435774  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:57422 -> 172.19.0.3:3389
+08/11/2026-17:59:54.545130  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:57424 -> 172.19.0.3:3389
+08/11/2026-17:59:54.654805  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:57432 -> 172.19.0.3:3389
+08/11/2026-17:59:54.764269  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:57442 -> 172.19.0.3:3389
+08/11/2026-17:59:54.876477  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:57458 -> 172.19.0.3:3389
+08/11/2026-18:11:04.137996  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:36584 -> 172.19.0.2:3389
+08/11/2026-18:11:04.249500  [**] [1:9000001:1] SOC-LAB Port scan - many SYN packets [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:48922 -> 172.19.0.2:80
+08/11/2026-18:11:04.251140  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:36598 -> 172.19.0.2:3389
+08/11/2026-18:11:04.361643  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:36602 -> 172.19.0.2:3389
+08/11/2026-18:11:04.471179  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:36618 -> 172.19.0.2:3389
+08/11/2026-18:11:04.580324  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:36634 -> 172.19.0.2:3389
+08/11/2026-18:11:04.690797  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:36644 -> 172.19.0.2:3389
+08/11/2026-18:11:04.805494  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:36650 -> 172.19.0.2:3389
+08/11/2026-18:11:04.915567  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:36656 -> 172.19.0.2:3389
+08/11/2026-18:11:24.788942  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:49238 -> 172.19.0.2:3389
+08/11/2026-18:11:24.899933  [**] [1:9000001:1] SOC-LAB Port scan - many SYN packets [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:52162 -> 172.19.0.2:80
+08/11/2026-18:11:24.901379  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:49240 -> 172.19.0.2:3389
+08/11/2026-18:11:25.010844  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:49254 -> 172.19.0.2:3389
+08/11/2026-18:11:25.120389  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:49260 -> 172.19.0.2:3389
+08/11/2026-18:11:25.229594  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:49264 -> 172.19.0.2:3389
+08/11/2026-18:11:25.339138  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:49270 -> 172.19.0.2:3389
+08/11/2026-18:11:25.449777  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:49276 -> 172.19.0.2:3389
+08/11/2026-18:11:25.560856  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:49282 -> 172.19.0.2:3389
+08/11/2026-18:16:22.604097  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:53388 -> 172.19.0.2:3389
+08/11/2026-18:16:22.714977  [**] [1:9000001:1] SOC-LAB Port scan - many SYN packets [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:50714 -> 172.19.0.2:80
+08/11/2026-18:16:22.717189  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:53400 -> 172.19.0.2:3389
+08/11/2026-18:16:22.843744  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:53406 -> 172.19.0.2:3389
+08/11/2026-18:16:22.959801  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:53414 -> 172.19.0.2:3389
+08/11/2026-18:16:23.071019  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:53426 -> 172.19.0.2:3389
+08/11/2026-18:16:23.181967  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:53428 -> 172.19.0.2:3389
+08/11/2026-18:16:23.294147  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:53430 -> 172.19.0.2:3389
+08/11/2026-18:16:23.411856  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:53434 -> 172.19.0.2:3389
+08/11/2026-20:21:49.009099  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:35482 -> 172.19.0.2:3389
+08/11/2026-20:21:49.121880  [**] [1:9000001:1] SOC-LAB Port scan - many SYN packets [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:45672 -> 172.19.0.2:80
+08/11/2026-20:21:49.124038  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:35486 -> 172.19.0.2:3389
+08/11/2026-20:21:49.237457  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:35488 -> 172.19.0.2:3389
+08/11/2026-20:21:49.350729  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:35490 -> 172.19.0.2:3389
+08/11/2026-20:21:49.463311  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:35492 -> 172.19.0.2:3389
+08/11/2026-20:21:49.576784  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:35500 -> 172.19.0.2:3389
+08/11/2026-20:21:49.688041  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:35506 -> 172.19.0.2:3389
+08/11/2026-20:21:49.798389  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.3:35520 -> 172.19.0.2:3389
+08/12/2026-19:17:00.984803  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:55334 -> 172.19.0.3:3389
+08/12/2026-19:17:01.101323  [**] [1:9000001:1] SOC-LAB Port scan - many SYN packets [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:52644 -> 172.19.0.3:80
+08/12/2026-19:17:01.102886  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:55340 -> 172.19.0.3:3389
+08/12/2026-19:17:01.229464  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:55346 -> 172.19.0.3:3389
+08/12/2026-19:17:01.339975  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:55362 -> 172.19.0.3:3389
+08/12/2026-19:17:01.453448  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:33298 -> 172.19.0.3:3389
+08/12/2026-19:17:01.572140  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:33314 -> 172.19.0.3:3389
+08/12/2026-19:17:01.692898  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:33326 -> 172.19.0.3:3389
+08/12/2026-19:17:01.806105  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:33328 -> 172.19.0.3:3389
+08/12/2026-19:17:58.030275  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:48396 -> 172.19.0.3:3389
+08/12/2026-19:17:58.141424  [**] [1:9000001:1] SOC-LAB Port scan - many SYN packets [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:42036 -> 172.19.0.3:80
+08/12/2026-19:17:58.143421  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:48402 -> 172.19.0.3:3389
+08/12/2026-19:17:58.255100  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:48410 -> 172.19.0.3:3389
+08/12/2026-19:17:58.375585  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:48420 -> 172.19.0.3:3389
+08/12/2026-19:17:58.487198  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:48434 -> 172.19.0.3:3389
+08/12/2026-19:17:58.601092  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:48444 -> 172.19.0.3:3389
+08/12/2026-19:17:58.713043  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:48452 -> 172.19.0.3:3389
+08/12/2026-19:17:58.825514  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:48458 -> 172.19.0.3:3389
+08/12/2026-19:18:41.486216  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:49472 -> 172.19.0.3:3389
+08/12/2026-19:18:41.608123  [**] [1:9000001:1] SOC-LAB Port scan - many SYN packets [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:46218 -> 172.19.0.3:80
+08/12/2026-19:18:41.610790  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:49474 -> 172.19.0.3:3389
+08/12/2026-19:18:41.726363  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:49482 -> 172.19.0.3:3389
+08/12/2026-19:18:41.841064  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:49496 -> 172.19.0.3:3389
+08/12/2026-19:18:41.954980  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:49510 -> 172.19.0.3:3389
+08/12/2026-19:18:42.068828  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:49518 -> 172.19.0.3:3389
+08/12/2026-19:18:42.190252  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:49520 -> 172.19.0.3:3389
+08/12/2026-19:18:42.304095  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:49524 -> 172.19.0.3:3389
+08/12/2026-19:19:18.479417  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:44492 -> 172.19.0.3:3389
+08/12/2026-19:19:18.589023  [**] [1:9000001:1] SOC-LAB Port scan - many SYN packets [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:60326 -> 172.19.0.3:80
+08/12/2026-19:19:18.590856  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:44502 -> 172.19.0.3:3389
+08/12/2026-19:19:18.703195  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:44516 -> 172.19.0.3:3389
+08/12/2026-19:19:18.813019  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:44524 -> 172.19.0.3:3389
+08/12/2026-19:19:18.924433  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:44526 -> 172.19.0.3:3389
+08/12/2026-19:19:19.034781  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:44542 -> 172.19.0.3:3389
+08/12/2026-19:19:19.144633  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:44554 -> 172.19.0.3:3389
+08/12/2026-19:19:19.255027  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:44570 -> 172.19.0.3:3389
+08/12/2026-19:24:47.042445  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.2:52700 -> 172.19.0.3:3389
+08/13/2026-18:35:41.950840  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.6:59370 -> 172.19.0.5:3389
+08/13/2026-18:35:42.061879  [**] [1:9000001:1] SOC-LAB Port scan - many SYN packets [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.6:39504 -> 172.19.0.5:80
+08/13/2026-18:35:42.063736  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.6:59386 -> 172.19.0.5:3389
+08/13/2026-18:35:42.176794  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.6:59398 -> 172.19.0.5:3389
+08/13/2026-18:35:42.290104  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.6:59410 -> 172.19.0.5:3389
+08/13/2026-18:35:42.402711  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.6:59416 -> 172.19.0.5:3389
+08/13/2026-18:35:42.516058  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.6:59432 -> 172.19.0.5:3389
+08/13/2026-18:35:42.627630  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.6:59440 -> 172.19.0.5:3389
+08/13/2026-18:35:42.737656  [**] [1:9000002:1] SOC-LAB RDP probe detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.6:59448 -> 172.19.0.5:3389
+08/13/2026-19:24:04.795271  [**] [1:9000001:1] SOC-LAB Port scan - many SYN packets [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.6:56222 -> 172.19.0.5:14
+08/13/2026-19:24:35.104814  [**] [1:9000001:1] SOC-LAB Port scan - many SYN packets [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 172.19.0.6:56854 -> 172.19.0.5:80
