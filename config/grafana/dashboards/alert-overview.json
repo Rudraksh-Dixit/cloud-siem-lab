@@ -10,51 +10,60 @@
     {
       "datasource": { "type": "grafana-opensearch-datasource", "uid": "${DS_WAZUH}" },
       "fieldConfig": {
-        "defaults": { "color": { "mode": "palette-classic" }, "custom": { "fillOpacity": 30 } },
+        "defaults": { "color": { "mode": "palette-classic" }, "custom": { "fillOpacity": 30, "spanNulls": true } },
         "overrides": []
       },
-      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 },
+      "gridPos": { "h": 9, "w": 12, "x": 0, "y": 0 },
       "id": 1,
-      "title": "Alerts Over Time by Level",
+      "title": "Alerts Over Time",
       "type": "timeseries",
       "targets": [
         {
-          "query": "SELECT histogram(timestamp, '1m') AS time, rule.level, count(*) AS count FROM wazuh-alerts-* GROUP BY time, rule.level ORDER BY time",
-          "datasource": { "type": "grafana-opensearch-datasource", "uid": "${DS_WAZUH}" }
+          "datasource": { "type": "grafana-opensearch-datasource", "uid": "${DS_WAZUH}" },
+          "query": "",
+          "bucketAggs": [
+            { "type": "date_histogram", "settings": { "interval": "auto" }, "id": "2" },
+            { "type": "terms", "settings": { "size": "10", "order": "desc" }, "field": "rule.level", "id": "3" }
+          ],
+          "metrics": [{ "type": "count", "id": "1" }]
         }
       ]
     },
     {
       "datasource": { "type": "grafana-opensearch-datasource", "uid": "${DS_WAZUH}" },
       "fieldConfig": {
-        "defaults": { "color": { "mode": "thresholds" }, "thresholds": { "steps": [{ "color": "green", "value": null }, { "color": "red", "value": 80 }] } },
+        "defaults": { "color": { "fixedColor": "orange", "mode": "fixed" }, "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }, { "color": "red", "value": 80 }] } },
         "overrides": []
       },
-      "gridPos": { "h": 8, "w": 6, "x": 12, "y": 0 },
+      "gridPos": { "h": 9, "w": 6, "x": 12, "y": 0 },
       "id": 2,
-      "title": "Total Alerts (24h)",
+      "title": "Total Alerts",
       "type": "stat",
       "targets": [
         {
-          "query": "*",
-          "datasource": { "type": "grafana-opensearch-datasource", "uid": "${DS_WAZUH}" }
+          "datasource": { "type": "grafana-opensearch-datasource", "uid": "${DS_WAZUH}" },
+          "query": "",
+          "bucketAggs": [{ "type": "date_histogram", "settings": { "interval": "auto" }, "id": "2" }],
+          "metrics": [{ "type": "count", "id": "1" }]
         }
       ]
     },
     {
       "datasource": { "type": "grafana-opensearch-datasource", "uid": "${DS_WAZUH}" },
       "fieldConfig": {
-        "defaults": { "color": { "mode": "thresholds" }, "thresholds": { "steps": [{ "color": "green", "value": null }, { "color": "yellow", "value": 10 }, { "color": "red", "value": 20 }] } },
+        "defaults": { "color": { "fixedColor": "super-light-red", "mode": "fixed" }, "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }, { "color": "red", "value": 5 }] } },
         "overrides": []
       },
-      "gridPos": { "h": 8, "w": 6, "x": 18, "y": 0 },
+      "gridPos": { "h": 9, "w": 6, "x": 18, "y": 0 },
       "id": 3,
-      "title": "Active Responses (24h)",
+      "title": "High Level Alerts (12+)",
       "type": "stat",
       "targets": [
         {
-          "query": "rule.groups:active_response",
-          "datasource": { "type": "grafana-opensearch-datasource", "uid": "${DS_WAZUH}" }
+          "datasource": { "type": "grafana-opensearch-datasource", "uid": "${DS_WAZUH}" },
+          "query": "rule.level: [12 TO *]",
+          "bucketAggs": [{ "type": "date_histogram", "settings": { "interval": "auto" }, "id": "2" }],
+          "metrics": [{ "type": "count", "id": "1" }]
         }
       ]
     },
@@ -64,14 +73,18 @@
         "defaults": { "color": { "mode": "palette-classic" } },
         "overrides": []
       },
-      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 8 },
+      "gridPos": { "h": 9, "w": 12, "x": 0, "y": 9 },
       "id": 4,
-      "title": "Top 10 Source IPs (Blocked)",
+      "title": "Top 10 Rule Descriptions",
       "type": "barchart",
       "targets": [
         {
-          "query": "rule.groups:active_response",
-          "datasource": { "type": "grafana-opensearch-datasource", "uid": "${DS_WAZUH}" }
+          "datasource": { "type": "grafana-opensearch-datasource", "uid": "${DS_WAZUH}" },
+          "query": "",
+          "bucketAggs": [
+            { "type": "terms", "field": "rule.description", "settings": { "size": "10", "order": "desc" }, "id": "3" }
+          ],
+          "metrics": [{ "type": "count", "id": "1" }]
         }
       ]
     },
@@ -81,35 +94,35 @@
         "defaults": { "color": { "mode": "palette-classic" } },
         "overrides": []
       },
-      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 8 },
+      "gridPos": { "h": 9, "w": 12, "x": 12, "y": 9 },
       "id": 5,
-      "title": "Top Rule Descriptions",
+      "title": "Top Agents",
       "type": "piechart",
       "targets": [
         {
-          "query": "*",
-          "datasource": { "type": "grafana-opensearch-datasource", "uid": "${DS_WAZUH}" }
+          "datasource": { "type": "grafana-opensearch-datasource", "uid": "${DS_WAZUH}" },
+          "query": "",
+          "bucketAggs": [
+            { "type": "terms", "field": "agent.name", "settings": { "size": "10", "order": "desc" }, "id": "3" }
+          ],
+          "metrics": [{ "type": "count", "id": "1" }]
         }
       ]
     },
     {
       "datasource": { "type": "grafana-opensearch-datasource", "uid": "${DS_WAZUH}" },
-      "gridPos": { "h": 10, "w": 24, "x": 0, "y": 16 },
+      "gridPos": { "h": 10, "w": 24, "x": 0, "y": 18 },
       "id": 6,
       "title": "Recent Alerts",
       "type": "table",
       "targets": [
         {
-          "query": "*",
-          "datasource": { "type": "grafana-opensearch-datasource", "uid": "${DS_WAZUH}" }
+          "datasource": { "type": "grafana-opensearch-datasource", "uid": "${DS_WAZUH}" },
+          "query": "",
+          "bucketAggs": [{ "type": "date_histogram", "settings": { "interval": "auto" }, "id": "2" }],
+          "metrics": [{ "type": "count", "id": "1" }]
         }
-      ],
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": [
-          { "matcher": { "id": "byName", "options": "rule.level" }, "properties": [{ "id": "custom.cellOptions", "value": { "type": "color-background", "mode": "basic" } }] }
-        ]
-      }
+      ]
     }
   ],
   "schemaVersion": 39,
