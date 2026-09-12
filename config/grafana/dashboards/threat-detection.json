@@ -1,0 +1,115 @@
+{
+  "annotations": { "list": [] },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 1,
+  "id": null,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "datasource": { "type": "grafana-opensearch-datasource", "uid": "${DS_WAZUH}" },
+      "fieldConfig": {
+        "defaults": { "color": { "mode": "palette-classic" }, "custom": { "fillOpacity": 30 } },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 },
+      "id": 1,
+      "title": "SSH Brute Force Attempts Over Time",
+      "type": "timeseries",
+      "targets": [
+        {
+          "query": "rule.groups:brute_force AND rule.groups:ssh",
+          "datasource": { "type": "grafana-opensearch-datasource", "uid": "${DS_WAZUH}" }
+        }
+      ]
+    },
+    {
+      "datasource": { "type": "grafana-opensearch-datasource", "uid": "${DS_WAZUH}" },
+      "fieldConfig": {
+        "defaults": { "color": { "mode": "palette-classic" } },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 0 },
+      "id": 2,
+      "title": "Port Scan Detections Over Time",
+      "type": "timeseries",
+      "targets": [
+        {
+          "query": "rule.groups:port_scan",
+          "datasource": { "type": "grafana-opensearch-datasource", "uid": "${DS_WAZUH}" }
+        }
+      ]
+    },
+    {
+      "datasource": { "type": "grafana-opensearch-datasource", "uid": "${DS_WAZUH}" },
+      "fieldConfig": { "defaults": { "color": { "mode": "palette-classic" } }, "overrides": [] },
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 8 },
+      "id": 3,
+      "title": "PowerShell Obfuscation Detections",
+      "type": "barchart",
+      "targets": [
+        {
+          "query": "rule.groups:obfuscation AND rule.groups:powershell",
+          "datasource": { "type": "grafana-opensearch-datasource", "uid": "${DS_WAZUH}" }
+        }
+      ]
+    },
+    {
+      "datasource": { "type": "grafana-opensearch-datasource", "uid": "${DS_WAZUH}" },
+      "fieldConfig": { "defaults": { "color": { "mode": "palette-classic" } }, "overrides": [] },
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 8 },
+      "id": 4,
+      "title": "Suspicious Process & Lateral Movement",
+      "type": "barchart",
+      "targets": [
+        {
+          "query": "rule.groups:suspicious_process OR rule.groups:lateral_movement",
+          "datasource": { "type": "grafana-opensearch-datasource", "uid": "${DS_WAZUH}" }
+        }
+      ]
+    },
+    {
+      "datasource": { "type": "grafana-opensearch-datasource", "uid": "${DS_SURICATA}" },
+      "fieldConfig": { "defaults": { "color": { "mode": "palette-classic" }, "custom": { "fillOpacity": 30 } }, "overrides": [] },
+      "gridPos": { "h": 8, "w": 24, "x": 0, "y": 16 },
+      "id": 5,
+      "title": "Suricata Network Alerts Over Time",
+      "type": "timeseries",
+      "targets": [
+        {
+          "query": "*",
+          "datasource": { "type": "grafana-opensearch-datasource", "uid": "${DS_SURICATA}" }
+        }
+      ]
+    }
+  ],
+  "schemaVersion": 39,
+  "tags": ["wazuh", "suricata", "siem"],
+  "templating": {
+    "list": [
+      {
+        "current": { "selected": false, "text": "Wazuh Indexer", "value": "Wazuh Indexer" },
+        "hide": 0,
+        "includeAll": false,
+        "name": "DS_WAZUH",
+        "options": [],
+        "query": "grafana-opensearch-datasource",
+        "type": "datasource"
+      },
+      {
+        "current": { "selected": false, "text": "Suricata Indexer", "value": "Suricata Indexer" },
+        "hide": 0,
+        "includeAll": false,
+        "name": "DS_SURICATA",
+        "options": [],
+        "query": "grafana-opensearch-datasource",
+        "type": "datasource"
+      }
+    ]
+  },
+  "time": { "from": "now-24h", "to": "now" },
+  "title": "Cloud SIEM - Threat Detection",
+  "uid": "cloud-siem-threats",
+  "version": 1
+}

@@ -1,0 +1,134 @@
+{
+  "annotations": { "list": [] },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 1,
+  "id": null,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "datasource": { "type": "grafana-opensearch-datasource", "uid": "${DS_WAZUH}" },
+      "fieldConfig": {
+        "defaults": { "color": { "mode": "palette-classic" }, "custom": { "fillOpacity": 30 } },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 },
+      "id": 1,
+      "title": "Alerts Over Time by Level",
+      "type": "timeseries",
+      "targets": [
+        {
+          "query": "SELECT histogram(timestamp, '1m') AS time, rule.level, count(*) AS count FROM wazuh-alerts-* GROUP BY time, rule.level ORDER BY time",
+          "datasource": { "type": "grafana-opensearch-datasource", "uid": "${DS_WAZUH}" }
+        }
+      ]
+    },
+    {
+      "datasource": { "type": "grafana-opensearch-datasource", "uid": "${DS_WAZUH}" },
+      "fieldConfig": {
+        "defaults": { "color": { "mode": "thresholds" }, "thresholds": { "steps": [{ "color": "green", "value": null }, { "color": "red", "value": 80 }] } },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 6, "x": 12, "y": 0 },
+      "id": 2,
+      "title": "Total Alerts (24h)",
+      "type": "stat",
+      "targets": [
+        {
+          "query": "*",
+          "datasource": { "type": "grafana-opensearch-datasource", "uid": "${DS_WAZUH}" }
+        }
+      ]
+    },
+    {
+      "datasource": { "type": "grafana-opensearch-datasource", "uid": "${DS_WAZUH}" },
+      "fieldConfig": {
+        "defaults": { "color": { "mode": "thresholds" }, "thresholds": { "steps": [{ "color": "green", "value": null }, { "color": "yellow", "value": 10 }, { "color": "red", "value": 20 }] } },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 6, "x": 18, "y": 0 },
+      "id": 3,
+      "title": "Active Responses (24h)",
+      "type": "stat",
+      "targets": [
+        {
+          "query": "rule.groups:active_response",
+          "datasource": { "type": "grafana-opensearch-datasource", "uid": "${DS_WAZUH}" }
+        }
+      ]
+    },
+    {
+      "datasource": { "type": "grafana-opensearch-datasource", "uid": "${DS_WAZUH}" },
+      "fieldConfig": {
+        "defaults": { "color": { "mode": "palette-classic" } },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 8 },
+      "id": 4,
+      "title": "Top 10 Source IPs (Blocked)",
+      "type": "barchart",
+      "targets": [
+        {
+          "query": "rule.groups:active_response",
+          "datasource": { "type": "grafana-opensearch-datasource", "uid": "${DS_WAZUH}" }
+        }
+      ]
+    },
+    {
+      "datasource": { "type": "grafana-opensearch-datasource", "uid": "${DS_WAZUH}" },
+      "fieldConfig": {
+        "defaults": { "color": { "mode": "palette-classic" } },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 8 },
+      "id": 5,
+      "title": "Top Rule Descriptions",
+      "type": "piechart",
+      "targets": [
+        {
+          "query": "*",
+          "datasource": { "type": "grafana-opensearch-datasource", "uid": "${DS_WAZUH}" }
+        }
+      ]
+    },
+    {
+      "datasource": { "type": "grafana-opensearch-datasource", "uid": "${DS_WAZUH}" },
+      "gridPos": { "h": 10, "w": 24, "x": 0, "y": 16 },
+      "id": 6,
+      "title": "Recent Alerts",
+      "type": "table",
+      "targets": [
+        {
+          "query": "*",
+          "datasource": { "type": "grafana-opensearch-datasource", "uid": "${DS_WAZUH}" }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": [
+          { "matcher": { "id": "byName", "options": "rule.level" }, "properties": [{ "id": "custom.cellOptions", "value": { "type": "color-background", "mode": "basic" } }] }
+        ]
+      }
+    }
+  ],
+  "schemaVersion": 39,
+  "tags": ["wazuh", "siem"],
+  "templating": {
+    "list": [
+      {
+        "current": { "selected": false, "text": "Wazuh Indexer", "value": "Wazuh Indexer" },
+        "hide": 0,
+        "includeAll": false,
+        "name": "DS_WAZUH",
+        "options": [],
+        "query": "grafana-opensearch-datasource",
+        "type": "datasource"
+      }
+    ]
+  },
+  "time": { "from": "now-24h", "to": "now" },
+  "title": "Cloud SIEM - Alert Overview",
+  "uid": "cloud-siem-alerts",
+  "version": 1
+}

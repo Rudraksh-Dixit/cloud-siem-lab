@@ -1,0 +1,222 @@
+{
+  "name": "Cloud SIEM Lab - Detection Coverage",
+  "version": "4.0",
+  "description": "MITRE ATT&CK Navigator layer mapping custom Wazuh detection rules from the Cloud SIEM Lab",
+  "filters": {
+    "stages": ["act"],
+    "platforms": ["Windows", "Linux"]
+  },
+  "sorting": 0,
+  "layout": {
+    "layout": "side",
+    "aggregateFunction": "average",
+    "showID": false,
+    "showName": true,
+    "showAggregateScores": true
+  },
+  "hideDisabled": false,
+  "selectSubtechniquesWithParent": false,
+  "techniques": [
+    {
+      "techniqueID": "T1059.001",
+      "tactic": "execution",
+      "color": "#ff6666",
+      "comment": "PowerShell obfuscation, encoded commands, IEX, download cradles (Rules 100001-100003)",
+      "enabled": true,
+      "score": 3
+    },
+    {
+      "techniqueID": "T1027",
+      "tactic": "defense-evasion",
+      "color": "#ff9900",
+      "comment": "Obfuscated files/information - string reversal, Base64 compression (Rules 100001-100002)",
+      "enabled": true,
+      "score": 2
+    },
+    {
+      "techniqueID": "T1140",
+      "tactic": "defense-evasion",
+      "color": "#ff9900",
+      "comment": "Deobfuscate/Decode Files - Base64 + compression (Rule 100002)",
+      "enabled": true,
+      "score": 1
+    },
+    {
+      "techniqueID": "T1110.001",
+      "tactic": "credential-access",
+      "color": "#ff6666",
+      "comment": "SSH brute force - threshold + sustained detection (Rules 100010-100012)",
+      "enabled": true,
+      "score": 3
+    },
+    {
+      "techniqueID": "T1110.003",
+      "tactic": "credential-access",
+      "color": "#ffcc00",
+      "comment": "Password spraying - multi-user auth scan (Rule 100021)",
+      "enabled": true,
+      "score": 1
+    },
+    {
+      "techniqueID": "T1046",
+      "tactic": "discovery",
+      "color": "#ff6666",
+      "comment": "Network service discovery - port scan detection (Rule 100020)",
+      "enabled": true,
+      "score": 1
+    },
+    {
+      "techniqueID": "T1059",
+      "tactic": "execution",
+      "color": "#ff9900",
+      "comment": "Command-line interpreter - Office spawning shell (Rule 100030)",
+      "enabled": true,
+      "score": 1
+    },
+    {
+      "techniqueID": "T1566.001",
+      "tactic": "initial-access",
+      "color": "#ff9900",
+      "comment": "Spearphishing attachment - Office macro spawning shell (Rule 100030)",
+      "enabled": true,
+      "score": 1
+    },
+    {
+      "techniqueID": "T1204.002",
+      "tactic": "execution",
+      "color": "#ff9900",
+      "comment": "Malicious file execution - user execution of malicious file (Rule 100030)",
+      "enabled": true,
+      "score": 1
+    },
+    {
+      "techniqueID": "T1055",
+      "tactic": "defense-evasion",
+      "color": "#ff6666",
+      "comment": "Process injection - lsass spawning command (Rule 100031)",
+      "enabled": true,
+      "score": 1
+    },
+    {
+      "techniqueID": "T1003.001",
+      "tactic": "credential-access",
+      "color": "#ff6666",
+      "comment": "LSASS Memory access - lsass spawning shell (Rule 100031)",
+      "enabled": true,
+      "score": 1
+    },
+    {
+      "techniqueID": "T1547.001",
+      "tactic": "persistence",
+      "color": "#ff9900",
+      "comment": "Registry Run key persistence (Rule 100040)",
+      "enabled": true,
+      "score": 1
+    },
+    {
+      "techniqueID": "T1021.002",
+      "tactic": "lateral-movement",
+      "color": "#ffcc00",
+      "comment": "PSExec remote execution (Rule 100041)",
+      "enabled": true,
+      "score": 1
+    },
+    {
+      "techniqueID": "T1047",
+      "tactic": "execution",
+      "color": "#ffcc00",
+      "comment": "WMI execution - lateral movement (Rule 100041)",
+      "enabled": true,
+      "score": 1
+    },
+    {
+      "techniqueID": "T1569.002",
+      "tactic": "execution",
+      "color": "#ffcc00",
+      "comment": "Service execution - PsExec (Rule 100041)",
+      "enabled": true,
+      "score": 1
+    },
+    {
+      "techniqueID": "T1059.004",
+      "tactic": "execution",
+      "color": "#99ccff",
+      "comment": "Bash command execution (Atomic Red Team Linux)",
+      "enabled": true,
+      "score": 1
+    },
+    {
+      "techniqueID": "T1083",
+      "tactic": "discovery",
+      "color": "#99ccff",
+      "comment": "File and directory discovery (Atomic Red Team Linux)",
+      "enabled": true,
+      "score": 1
+    },
+    {
+      "techniqueID": "T1087.001",
+      "tactic": "discovery",
+      "color": "#99ccff",
+      "comment": "Local account discovery (Atomic Red Team Linux)",
+      "enabled": true,
+      "score": 1
+    },
+    {
+      "techniqueID": "T1082",
+      "tactic": "discovery",
+      "color": "#99ccff",
+      "comment": "System information discovery (Atomic Red Team Linux)",
+      "enabled": true,
+      "score": 1
+    },
+    {
+      "techniqueID": "T1018",
+      "tactic": "discovery",
+      "color": "#99ccff",
+      "comment": "Remote system discovery via ARP (Atomic Red Team Linux)",
+      "enabled": true,
+      "score": 1
+    }
+  ],
+  "gradient": {
+    "colors": ["#ff6666", "#ff9900", "#ffcc00", "#99ccff"],
+    "minValue": 1,
+    "maxValue": 3
+  },
+  "legendItems": [
+    {
+      "label": "High Coverage (3+ rules)",
+      "color": "#ff6666"
+    },
+    {
+      "label": "Medium Coverage (2 rules)",
+      "color": "#ff9900"
+    },
+    {
+      "label": "Low Coverage (1 rule)",
+      "color": "#ffcc00"
+    },
+    {
+      "label": "Linux-specific",
+      "color": "#99ccff"
+    }
+  ],
+  "metadata": [
+    {
+      "name": "Project",
+      "value": "Cloud SIEM Lab"
+    },
+    {
+      "name": "Author",
+      "value": "Rudraksh Dixit"
+    },
+    {
+      "name": "Date",
+      "value": "2026-09-12"
+    }
+  ],
+  "showTacticRowBackground": false,
+  "tacticRowBackground": "#dddddd",
+  "selectTechniquesAcrossTactics": true,
+  "selectionTechniquesAcrossTactics": "technique"
+}

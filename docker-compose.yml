@@ -1,0 +1,53 @@
+name: cloud-siem-lab
+
+services:
+  grafana:
+    image: grafana/grafana:latest
+    container_name: cloud-siem-grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=SecretPassword
+      - GF_INSTALL_PLUGINS=grafana-opensearch-datasource
+    volumes:
+      - ./config/grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./config/grafana/dashboards:/var/lib/grafana/dashboards:ro
+      - grafana-data:/var/lib/grafana
+    networks:
+      - wazuh-network
+    restart: unless-stopped
+
+  dvwa:
+    image: vulnerables/web-dvwa
+    container_name: cloud-siem-dvwa
+    ports:
+      - "8080:80"
+    environment:
+      - DB_SERVER=db
+    depends_on:
+      - db
+    networks:
+      - wazuh-network
+      - attack-network
+    restart: unless-stopped
+
+  db:
+    image: mysql:5.7
+    container_name: cloud-siem-dvwa-db
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=dvwa
+    networks:
+      - wazuh-network
+    restart: unless-stopped
+
+networks:
+  wazuh-network:
+    external: true
+    name: single-node_default
+  attack-network:
+    driver: bridge
+
+volumes:
+  grafana-data:
